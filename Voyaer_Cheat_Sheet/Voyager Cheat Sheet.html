@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<!-- saved from url=(0038)https://voyager-cheatsheet.ulties.com/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <link rel="stylesheet" href="./Voyager Cheat Sheet_files/normalize.css">
+    <link rel="stylesheet" href="./Voyager Cheat Sheet_files/foundation.min.css">
+    <link rel="stylesheet" href="./Voyager Cheat Sheet_files/font-awesome.min.css">
+    <link rel="shortcut icon" href="https://voyager-cheatsheet.ulties.com/assets/ico/favicon.png">
+    <link rel="stylesheet" href="./Voyager Cheat Sheet_files/page.css">
+    <meta name="description" content="Laravel Voyager Cheat Sheet , Codes , function , methods of voyager admin panel">
+    <title>Voyager Cheat Sheet</title>
+<meta class="foundation-data-attribute-namespace"><meta class="foundation-mq-xxlarge"><meta class="foundation-mq-xlarge"><meta class="foundation-mq-large"><meta class="foundation-mq-medium"><meta class="foundation-mq-small"><style></style><meta class="foundation-mq-topbar"></head>
+<body class="f-topbar-fixed">
+
+<a href="https://voyager-cheatsheet.ulties.com/#top" id="top-button" title="Top"><i class="icon-arrow-up"></i></a>
+<div class="fixed">
+    <nav class="top-bar" data-topbar="">
+        <ul class="title-area">
+            <li class="name"><h1><a href="https://voyager-cheatsheet.ulties.com/#">Voyager Cheat Sheet <small>v1.0.0</small></a></h1></li>
+            <li class="toggle-topbar menu-icon"><a href="https://voyager-cheatsheet.ulties.com/#"><span>Menu</span></a></li>
+        </ul>
+        
+    <section class="top-bar-section">
+            <ul class="right">
+                <li class="comments-toggle"><a href="https://voyager-cheatsheet.ulties.com/#"><i class="icon-comments"></i> Toggle Code Comments</a></li>
+                <li><a href="http://github.com/ulties/voyager-cheatsheet" target="_blank"><i class="icon-github"></i> Github</a></li>
+                <li class="has-dropdown not-click">
+                    <a href="https://voyager-cheatsheet.ulties.com/#">Documentation</a>
+                    <ul class="dropdown"><li class="title back js-generated"><h5><a href="javascript:void(0)">Back</a></h5></li>
+                        <li>
+                            <a href="https://laravelvoyager.com/docs" target="_blank"><i class="icon-file-text"></i> Voyager Docs</a>
+                        </li>
+                        <li>
+                            <a href="https://laravel.com/docs/" target="_blank"><i class="icon-file-text"></i> Laravel Docs</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </section></nav>
+</div>
+
+<a name="top" id="top-anchor"></a>
+
+<div class="row" id="search-box">
+    <div class="small-10 small-offset-1 large-6 large-offset-3 columns">
+        <div class="row collapse">
+            <div class="small-10 columns">
+                <input type="text" placeholder="Start typing to search..." id="search" name="search">
+            </div>
+            <div class="small-2 columns">
+                <button class="button postfix" id="search-button"><i class="icon-search"></i></button>
+            </div>
+        </div>
+        <small id="searchHint">hint: keep tapping the search, it scrolls to the result</small>
+    </div>
+</div>
+
+<div class="row full-width">
+    <div class="large-4 columns code-column">
+
+
+        <h4><a name="artisan" href="https://voyager-cheatsheet.ulties.com/#artisan">Artisan</a></h4>
+        <pre class="prettyprint lang-php prettyprinted" style=""><span class="com">// Install Voyager</span><span class="pln">
+php artisan voyager</span><span class="pun">:</span><span class="pln">install
+</span><span class="com">// Install Voyager with dummy data</span><span class="pln">
+php artisan voyager</span><span class="pun">:</span><span class="pln">install </span><span class="pun">--</span><span class="kwd">with</span><span class="pun">-</span><span class="pln">dummy
+</span><span class="com">// Make custom HTTP Voyager controllers</span><span class="pln">
+php artisan voyager</span><span class="pun">:</span><span class="pln">controllers
+</span><span class="com">// Ensure a user is admin with all permissions</span><span class="pln">
+php artisan voyager</span><span class="pun">:</span><span class="pln">admin your@email</span><span class="pun">.</span><span class="pln">com
+                </span></pre>
+
+        <h4><a name="menu" href="https://voyager-cheatsheet.ulties.com/#menu">Menu</a> <a href="https://the-control-group.github.io/voyager/docs/v0.10/#core-concepts-menus" title="Menu @ Voyager Docs"><i class="icon-file-text"></i></a></h4>
+        <pre class="prettyprint lang-php prettyprinted" style=""><span class="com">// Display the "main" menu</span><span class="pln">
+</span><span class="typ">Menu</span><span class="pun">::</span><span class="pln">display</span><span class="pun">(</span><span class="str">'main'</span><span class="pun">);</span><span class="pln">
+</span><span class="com">// Display the "main" menu with the "bootstrap" style</span><span class="pln">
+</span><span class="typ">Menu</span><span class="pun">::</span><span class="pln">display</span><span class="pun">(</span><span class="str">'main'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'bootstrap'</span><span class="pun">);</span><span class="pln">
+</span><span class="com">// Display the "main" menu with a custom style</span><span class="pln">
+</span><span class="typ">Menu</span><span class="pun">::</span><span class="pln">display</span><span class="pun">(</span><span class="str">'main'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'my_custom_menu_view_file'</span><span class="pun">);</span><span class="pln">
+                </span></pre>
+
+        <h4><a name="setting" href="https://voyager-cheatsheet.ulties.com/#setting">Built-in Settings</a></h4>
+        <pre class="prettyprint lang-php prettyprinted" style=""><span class="com">// Get setting value of "Site's Title"</span><span class="pln">
+</span><span class="typ">Voyager</span><span class="pun">::</span><span class="pln">setting</span><span class="pun">(</span><span class="str">'site.title'</span><span class="pun">);</span><span class="pln">
+</span><span class="com">// Get setting value of "Site's Title" with a default of "No Name"</span><span class="pln">
+</span><span class="typ">Voyager</span><span class="pun">::</span><span class="pln">setting</span><span class="pun">(</span><span class="str">'title'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'No Name'</span><span class="pun">);</span><span class="pln">
+</span><span class="com">// Get the setting icon_image(Icon used on the main login page and the top of sidebar)</span><span class="pln">
+</span><span class="typ">Voyager</span><span class="pun">::</span><span class="pln">setting</span><span class="pun">(</span><span class="str">'admin.icon_image'</span><span class="pun">);</span><span class="pln">
+</span><span class="com">// Get the bg_image setting which is used in the login page of the admin panel</span><span class="pln">
+</span><span class="typ">Voyager</span><span class="pun">::</span><span class="pln">setting</span><span class="pun">(</span><span class="str">'admin.bg_image'</span><span class="pun">);</span><span class="pln">
+</span><span class="com">// Get the google_analytics_client_id which is used in the dashboard page.</span><span class="pln">
+</span><span class="typ">Voyager</span><span class="pun">::</span><span class="pln">setting</span><span class="pun">(</span><span class="str">"google_analytics_client_id"</span><span class="pun">);</span><span class="pln">
+</span><span class="com">// Get the setting title which is used in the &lt;title&gt; tag of the admin panel</span><span class="pln">
+</span><span class="typ">Voyager</span><span class="pun">::</span><span class="pln">setting</span><span class="pun">(</span><span class="str">'admin.title'</span><span class="pun">);</span><span class="pln">
+</span><span class="com">// Get the setting description which is used in the &lt;title&gt; tag of the admin panel</span><span class="pln">
+</span><span class="typ">Voyager</span><span class="pun">::</span><span class="pln">setting</span><span class="pun">(</span><span class="str">'admin.description'</span><span class="pun">);</span><span class="pln">
+</span><span class="com">// Get the setting admin_loader which is used as a loader throughout the admin panel(Get creative with gifs here)</span><span class="pln">
+</span><span class="typ">Voyager</span><span class="pun">::</span><span class="pln">setting</span><span class="pun">(</span><span class="str">'admin_loader'</span><span class="pun">);</span><span class="pln">
+                </span></pre>
+
+    </div>
+
+    <div class="large-4 columns code-column">
+        <h4><a name="permission" href="https://voyager-cheatsheet.ulties.com/#permission">Permission</a></h4>
+        <pre class="prettyprint lang-php prettyprinted" style=""><span class="com">// Check if user have permission "visit-admin"</span><span class="pln">
+</span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">$user</span><span class="pun">-&gt;</span><span class="pln">hasPermission</span><span class="pun">(</span><span class="str">'visit-admin'</span><span class="pun">))</span><span class="pln"> </span><span class="pun">{}</span><span class="pln">
+</span><span class="com">// Check if user have permission and throw exception if not</span><span class="pln">
+</span><span class="typ">Voyager</span><span class="pun">::</span><span class="pln">can</span><span class="pun">(</span><span class="str">'visit-admin'</span><span class="pun">);</span><span class="pln">
+</span><span class="com">// Check if user have permission or fail</span><span class="pln">
+</span><span class="typ">Voyager</span><span class="pun">::</span><span class="pln">canOrFail</span><span class="pun">(</span><span class="str">'visit-admin'</span><span class="pun">);</span><span class="pln">
+</span><span class="com">// Check if user have permission or abort with status code</span><span class="pln">
+</span><span class="typ">Voyager</span><span class="pun">::</span><span class="pln">canOrAbort</span><span class="pun">(</span><span class="str">'visit-admin'</span><span class="pun">,</span><span class="pln"> </span><span class="lit">401</span><span class="pun">);</span><span class="pln">
+                </span></pre>
+
+        <h4><a name="rules" href="https://voyager-cheatsheet.ulties.com/#rules">Validation Rules</a> <a href="https://laravel.com/docs/5.4/validation#available-validation-rules" title="Available Validation Rules @ Laravel Docs"><i class="icon-file-text"></i></a></h4>
+        <pre class="prettyprint lang-php prettyprinted" style=""><span class="pln">accepted
+active_url
+after</span><span class="pun">:</span><span class="pln">YYYY</span><span class="pun">-</span><span class="pln">MM</span><span class="pun">-</span><span class="pln">DD
+before</span><span class="pun">:</span><span class="pln">YYYY</span><span class="pun">-</span><span class="pln">MM</span><span class="pun">-</span><span class="pln">DD
+alpha
+alpha_dash
+alpha_num
+array
+between</span><span class="pun">:</span><span class="lit">1</span><span class="pun">,</span><span class="lit">10</span><span class="pln">
+confirmed
+date
+date_format</span><span class="pun">:</span><span class="pln">YYYY</span><span class="pun">-</span><span class="pln">MM</span><span class="pun">-</span><span class="pln">DD
+different</span><span class="pun">:</span><span class="pln">fieldname
+digits</span><span class="pun">:</span><span class="pln">value
+digits_between</span><span class="pun">:</span><span class="pln">min</span><span class="pun">,</span><span class="pln">max
+</span><span class="kwd">boolean</span><span class="pln">
+email
+exists</span><span class="pun">:</span><span class="pln">table</span><span class="pun">,</span><span class="pln">column
+image
+</span><span class="kwd">in</span><span class="pun">:</span><span class="pln">foo</span><span class="pun">,</span><span class="pln">bar</span><span class="pun">,...</span><span class="pln">
+not_in</span><span class="pun">:</span><span class="pln">foo</span><span class="pun">,</span><span class="pln">bar</span><span class="pun">,...</span><span class="pln">
+integer
+numeric
+ip
+max</span><span class="pun">:</span><span class="pln">value
+min</span><span class="pun">:</span><span class="pln">value
+mimes</span><span class="pun">:</span><span class="pln">jpeg</span><span class="pun">,</span><span class="pln">png
+regex</span><span class="pun">:[</span><span class="lit">0</span><span class="pun">-</span><span class="lit">9</span><span class="pun">]</span><span class="pln">
+required
+required_if</span><span class="pun">:</span><span class="pln">field</span><span class="pun">,</span><span class="pln">value
+required_with</span><span class="pun">:</span><span class="pln">foo</span><span class="pun">,</span><span class="pln">bar</span><span class="pun">,...</span><span class="pln">
+required_with_all</span><span class="pun">:</span><span class="pln">foo</span><span class="pun">,</span><span class="pln">bar</span><span class="pun">,...</span><span class="pln">
+required_without</span><span class="pun">:</span><span class="pln">foo</span><span class="pun">,</span><span class="pln">bar</span><span class="pun">,...</span><span class="pln">
+required_without_all</span><span class="pun">:</span><span class="pln">foo</span><span class="pun">,</span><span class="pln">bar</span><span class="pun">,...</span><span class="pln">
+sometimes</span><span class="pun">|</span><span class="pln">required</span><span class="pun">|</span><span class="pln">field
+same</span><span class="pun">:</span><span class="pln">field
+size</span><span class="pun">:</span><span class="pln">value
+timezone
+unique</span><span class="pun">:</span><span class="pln">table</span><span class="pun">,</span><span class="pln">column</span><span class="pun">,</span><span class="kwd">except</span><span class="pun">,</span><span class="pln">idColumn
+url
+                </span></pre>
+
+    </div>
+    <div class="large-4 columnsi code-column">
+        <h4><a name="bread-types" href="https://voyager-cheatsheet.ulties.com/#bread-types">BREAD  Types</a> <a href="http://laravel.com/docs/responses#views" title="Views @ Laravel Docs"><i class="icon-file-text"></i></a></h4>
+        <pre class="prettyprint lang-php prettyprinted" style=""><span class="com">// A text box where you can type whatever</span><span class="pln">
+</span><span class="typ">Text</span><span class="pln"> </span><span class="typ">Box</span><span class="pln">
+</span><span class="com">// A multi-line text area (without a text editor)</span><span class="pln">
+</span><span class="typ">Text</span><span class="pln"> </span><span class="typ">Area</span><span class="pln">
+</span><span class="com">// A multi-line text area (with a text editor)</span><span class="pln">
+</span><span class="typ">Rich</span><span class="pln"> </span><span class="typ">Textbox</span><span class="pln">
+</span><span class="com">// A input field with hidden input</span><span class="pln">
+</span><span class="typ">Password</span><span class="pln">
+</span><span class="com">// A hidden input field</span><span class="pln">
+</span><span class="typ">Hidden</span><span class="pln">
+</span><span class="com">// A check box</span><span class="pln">
+</span><span class="typ">Check</span><span class="pln"> </span><span class="typ">Box</span><span class="pln">
+</span><span class="com">// A radio button</span><span class="pln">
+</span><span class="typ">Radio</span><span class="pln"> </span><span class="typ">Button</span><span class="pln">
+</span><span class="com">// A select dropdown without multi-selection</span><span class="pln">
+</span><span class="typ">Select</span><span class="pln"> </span><span class="typ">Dropdown</span><span class="pln">
+</span><span class="com">// A select dropdown with multi-selection</span><span class="pln">
+</span><span class="typ">Multiple</span><span class="pln"> </span><span class="typ">Select</span><span class="pln">
+</span><span class="com">// A file upload</span><span class="pln">
+</span><span class="typ">File</span><span class="pln">
+</span><span class="com">// A file upload that only accept images</span><span class="pln">
+</span><span class="typ">Image</span><span class="pln">
+</span><span class="com">// A input field that only accept a date</span><span class="pln">
+</span><span class="typ">Date</span><span class="pln">
+</span><span class="com">// A input field that only accept numbers</span><span class="pln">
+</span><span class="typ">Number</span><span class="pln">
+                </span></pre>
+    </div>
+
+</div>
+<script src="./Voyager Cheat Sheet_files/jquery.js.download"></script>
+<script src="./Voyager Cheat Sheet_files/jquery.highlight-4.js.download"></script>
+<script src="./Voyager Cheat Sheet_files/foundation.min.js.download"></script>
+<script src="./Voyager Cheat Sheet_files/prettify.js.download"></script>
+<script src="./Voyager Cheat Sheet_files/app.js.download"></script>
+
+
+</body></html>
