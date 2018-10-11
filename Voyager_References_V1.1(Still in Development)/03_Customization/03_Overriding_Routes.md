@@ -1,0 +1,15 @@
+
+
+Overriding Routes
+Learn how to override a Voyager route
+
+SUGGEST EDITS
+You can override any Voyager routes by writing the routes you want to overwrite below Voyager::routes(). For example if you want to override your post LoginController:
+
+Route::group(['prefix' => 'admin'], function () {
+   Voyager::routes();
+
+   // Your overwrites here
+   Route::post('login', ['uses' => 'MyAuthController@postLogin', 'as' => 'postlogin']);
+});
+
